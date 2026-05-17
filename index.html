@@ -57,6 +57,9 @@
     text-rendering: optimizeLegibility;
   }
   img { max-width: 100%; display: block; }
+  .hero-visual img, .about-visual img, .g-item img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
   a { color: inherit; text-decoration: none; }
 
   .wrap {
@@ -838,7 +841,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <image-slot id="hero" placeholder="Foto editorial principal — novia o retrato" shape="rect"></image-slot>
+      <img src="images/hero.jpg" alt="Valet MakeUp — maquillaje profesional">
     </div>
   </div>
   <div class="wrap hero-marquee">
@@ -918,7 +921,7 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-visual">
-        <image-slot id="about-portrait" placeholder="Retrato de Valet" shape="rect"></image-slot>
+        <img src="images/portrait.jpg" alt="Valeria Traverso — maquilladora profesional">
         <div class="frame"></div>
       </div>
       <div class="about-content">
