@@ -43,8 +43,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" href="fonts/Hurricane-Regular.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="images/hero.webp" as="image" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="preload" as="image"
+      href="images/hero.webp"
+      imagesrcset="images/hero-mobile.webp 480w, images/hero.webp 854w"
+      imagesizes="(max-width: 980px) 100vw, 50vw" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300&family=Jost:wght@300;400;500;600&display=swap" /></noscript>
 <script src="image-slot.js" defer></script>
 <style>
   @font-face {
@@ -93,7 +97,6 @@
     font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
   }
   img { max-width: 100%; display: block; }
   .hero-visual img, .about-visual img, .g-item img {
@@ -857,15 +860,6 @@
     .section { padding: 90px 0; }
   }
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18190849578"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18190849578');
-</script>
 </head>
 <body>
 
@@ -898,7 +892,9 @@
     </div>
     <div class="hero-visual">
       <picture>
-        <source srcset="images/hero.webp" type="image/webp">
+        <source type="image/webp"
+                srcset="images/hero-mobile.webp 480w, images/hero.webp 854w"
+                sizes="(max-width: 980px) 100vw, 50vw">
         <img src="images/hero.jpg" alt="Valet MakeUp — maquillaje profesional"
              width="854" height="854"
              fetchpriority="high" decoding="async">
@@ -1162,6 +1158,14 @@
   onScroll();
 </script>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18190849578"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18190849578');
+</script>
 
 </body>
 </html>
